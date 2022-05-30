@@ -1,0 +1,14 @@
+# validando terraform
+terraform init
+
+# Criar plano de executacao
+terraform plano
+
+# Aplicar alteracoes
+terraform apply
+
+# apresenta a variavel salva no terminal, ip é a variavel definida no output.tf
+terraform output ip 
+
+# destroi infraestrutura criada em cloud
+terraform destroy
