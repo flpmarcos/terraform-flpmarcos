@@ -1,6 +1,6 @@
 # Configura o projeto GCP
 provider "google" {
-  credentials = "${file("../secret-key/gcp-terraform-key.json")}"
+  credentials = "${file("../gcp-key.json")}"
   project     = "${var.project_id}"
   region      = "${var.regiao}"
 }
