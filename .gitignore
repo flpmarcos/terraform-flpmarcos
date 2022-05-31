@@ -1,4 +1,2 @@
-gcp/secret-key/*
 gcp/gcp-key.json
-aws/secret-key/*
 aws/aws-key.json
