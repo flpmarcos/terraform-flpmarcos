@@ -1,7 +1,7 @@
 gcp/gcp-key.json
 aws/aws-key.json
 
-*/*/terraform/*
+*/*/.terraform/*
 
 # .tfstate files
 */*/*.tfstate
