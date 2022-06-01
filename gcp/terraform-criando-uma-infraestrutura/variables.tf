@@ -1,39 +1,39 @@
 variable "project_id" {
-  type    = "string"
+  type    = string
   default = "heroic-habitat-351817"
 }
 
 variable "regiao" {
-  type = "string"
+  type = string
   default = "southamerica-east1-a"
 }
 
 variable "nome" {
-  type = "string"
+  type = string
   default = "vm-flpmarcos-webserver"
 }
 
 variable "tipo_maquina" {
-  type = "string"
+  type = string
   default = "f1-micro"
 }
 
 variable "zona" {
-  type = "string"
+  type = string
   default = "southamerica-east1-a"
 }
 
 variable "imagem" {
-  type = "string"
+  type = string
   default = "debian-cloud/debian-9"
 }
 
 variable "nome_fw" {
-  type = "string"
+  type = string
   default = "webserver-firewall"
 }
 
 variable "portas" {
-  type = "list"
-  default = ["80"]
+  type = list
+  default = ["80","443"]
 }

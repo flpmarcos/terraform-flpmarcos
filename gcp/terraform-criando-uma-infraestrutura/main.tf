@@ -11,7 +11,7 @@ resource "google_compute_instance" "webserver" {
   name          = "${var.nome}"
   machine_type  = "${var.tipo_maquina}"
   zone          = "${var.zona}"
-
+  
   boot_disk {
     initialize_params {
       image = "${var.imagem}"
@@ -37,7 +37,12 @@ resource "google_compute_firewall" "webfirewall" {
   network     = "default"
 
   allow {
+    protocol = "icmp"
+  }
+  allow {
     protocol  = "tcp"
     ports     = "${var.portas}"
   }
+  source_ranges = ["0.0.0.0/0"]
+  
 }
