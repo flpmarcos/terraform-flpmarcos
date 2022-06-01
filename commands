@@ -12,3 +12,7 @@ terraform output ip
 
 # destroi infraestrutura criada em cloud
 terraform destroy
+
+# arquivo variables.tf é usado para tratar variaveis
+
+# arquivo outputs.tf é utilizado para tratar output
