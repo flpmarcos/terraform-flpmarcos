@@ -7,12 +7,20 @@ terraform plano
 # Aplicar alteracoes
 terraform apply
 
+#Evita dar o yes no comando para aplicar as alteracoes
+terraform apply --auto-approve
+
 # apresenta a variavel salva no terminal, ip é a variavel definida no output.tf
 terraform output ip 
 
 # destroi infraestrutura criada em cloud
 terraform destroy
 
+# destroir infraestrutura aprovando automaticamente
+terraform destroy --auto-approve
+
 # arquivo variables.tf é usado para tratar variaveis
 
 # arquivo outputs.tf é utilizado para tratar output
+
+
