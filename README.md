@@ -9,5 +9,6 @@ Terraform lab (IAC) Multiple cloud
 | Local  - Deploy docker local | ✅  |
 | GCP - Criar VM   | ✅  |
 | GCP - Criar GKE | ✅  |
-| AWS - Criar VM | ⌛  |
+| AWS - Criar VM | ✅ |
+| AWS - Criar Webserver | ⌛ |
 | AWS - Criar AKE  | ⌛  |
