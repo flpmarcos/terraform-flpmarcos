@@ -10,5 +10,5 @@ Terraform lab (IAC) Multiple cloud
 | GCP - Criar VM   | ✅  |
 | GCP - Criar GKE | ✅  |
 | AWS - Criar VM | ✅ |
-| AWS - Criar Webserver | ⌛ |
+| AWS - Criar Webserver |  ✅  |
 | AWS - Criar AKE  | ⌛  |
