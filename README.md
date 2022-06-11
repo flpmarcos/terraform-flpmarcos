@@ -2,7 +2,7 @@
 Terraform lab (IAC) Multiple cloud
 
 
-## K8S -  TRAILHEAD
+## TERRAFORM -  TRAILHEAD
 
 | Feature  | Status |
 | ------------- | ------------- |
@@ -11,4 +11,5 @@ Terraform lab (IAC) Multiple cloud
 | GCP - Criar GKE | ✅  |
 | AWS - Criar VM | ✅ |
 | AWS - Criar Webserver |  ✅  |
+| TERRAFORM - Usar modulos |  ✅  |
 | AWS - Criar AKE  | ⌛  |
