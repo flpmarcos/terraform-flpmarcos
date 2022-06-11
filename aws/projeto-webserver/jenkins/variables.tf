@@ -1,7 +1,7 @@
 variable "project_name" {
   type        = string
   description = "Nome do projeto"
-  default     = "Webserver"
+  default     = "Jenkins"
 }
 
 variable "instance_tags" {
@@ -9,9 +9,9 @@ variable "instance_tags" {
   description = "Tags a serem aplicadas à nossa instância."
 
   default = {
-    "Name"     = "webserver-1"
+    "Name"     = "jenkins-1"
     "Ambiente" = "Desenvolvimento"
-    "Projeto"  = "Webserver"
+    "Projeto"  = "Jenkins"
   }
 }
 
@@ -21,24 +21,26 @@ variable "user_data" {
 
   default = <<-EOF
               #!/bin/bash
+              wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
+              sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
               sudo apt update
-              sudo apt install apache2 -y
-              sudo systemctl enable apache2
-              sudo systemctl start apache2
-              sudo ufw allow 'Apache'
+              sudo apt install default-jre -y
+              sudo apt install jenkins -y
+              sudo systemctl enable jenkins
+              sudo systemctl start jenkins
               EOF
 }
 
 variable "i_from_port" {
   type        = string
   description = "Ingress Origin port to receive connections."
-  default     = "80"
+  default     = "8080"
 }
 
 variable "i_to_port" {
   type        = string
   description = "Ingress Destination port to pass connections to."
-  default     = "80"
+  default     = "8080"
 }
 
 variable "i_ip_range" {
@@ -68,7 +70,7 @@ variable "e_ip_range" {
 variable "vpc_ip_range" {
   type        = string
   description = "Range de IPs para a VPC"
-  default     = "11.0.0.0/16"
+  default     = "12.0.0.0/16"
 }
 
 variable "gw_tags" {
@@ -76,7 +78,7 @@ variable "gw_tags" {
   description = "Tags a serem aplicadas ao gateway de internet"
 
   default = {
-    "Name" = "dev-webserver-gw"
+    "Name" = "dev-jenkins-gw"
   }
 }
 
@@ -91,7 +93,7 @@ variable "route_tags" {
   description = "Tags a serem aplicadas na route table"
 
   default = {
-    "Name" = "dev-webserver-route-table"
+    "Name" = "dev-jenkins-route-table"
   }
 }
 
@@ -100,7 +102,7 @@ variable "sg_tags" {
   description = "Tags a serem aplicadas no security group"
 
   default = {
-    "Name" = "dev-webserver-sg"
+    "Name" = "dev-jenkins-sg"
   }
 }
 
@@ -109,7 +111,7 @@ variable "vpc_tags" {
   description = "Tags a serem aplicadas a vpc"
 
   default = {
-    "Name" = "dev-webserver-vpc"
+    "Name" = "dev-jenkins-vpc"
   }
 }
 
@@ -118,6 +120,6 @@ variable "subnet_tags" {
   description = "Tags a serem aplicadas a subnet"
 
   default = {
-    "Name" = "dev-webserver-subnet"
+    "Name" = "dev-jenkins-subnet"
   }
 }
