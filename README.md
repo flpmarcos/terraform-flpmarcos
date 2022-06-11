@@ -11,5 +11,6 @@ Terraform lab (IAC) Multiple cloud
 | GCP - Criar GKE | ✅  |
 | AWS - Criar VM | ✅ |
 | AWS - Criar Webserver |  ✅  |
+| AWS - Deploy Jenkins |  ✅  |
 | TERRAFORM - Usar modulos |  ✅  |
 | AWS - Criar AKE  | ⌛  |
