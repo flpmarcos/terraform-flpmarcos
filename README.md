@@ -13,4 +13,4 @@ Terraform lab (IAC) Multiple cloud
 | AWS - Criar Webserver |  ✅  |
 | AWS - Deploy Jenkins |  ✅  |
 | TERRAFORM - Usar modulos |  ✅  |
-| GITLAB - PIPELINE TERRAFORM AWS  | ⌛  |
+| GITLAB - PIPELINE TERRAFORM AWS  | ✅   |

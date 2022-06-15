@@ -1,0 +1,56 @@
+stages:
+  - validar
+  - plan
+  - apply
+
+image:
+  name: hashicorp/terraform:light
+  entrypoint:
+    - '/usr/bin/env'
+    - 'PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    
+
+cache:
+  paths:
+    - .terraform
+
+before_script:
+  - mkdir $HOME/.aws
+  - echo [default] >> $HOME/.aws/credentials
+  - echo AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID} >> $HOME/.aws/credentials
+  - echo AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY} >> $HOME/.aws/credentials
+  - rm -rf .terraform
+  - terraform --version
+  - terraform init
+
+
+validar:
+  stage: validar
+  script:
+    - terraform validate
+  only:
+    - branches
+  
+
+plan:
+  stage: plan
+  script:
+    - terraform plan
+  only:
+    - merge_requests
+
+build:
+  stage: plan
+  script:
+    - terraform plan
+  only:
+    - main
+
+apply:
+  stage: apply
+  script:
+    - terraform apply -auto-approve
+  dependencies:
+    - build
+  only:
+    - main
